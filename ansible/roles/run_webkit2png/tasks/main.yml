@@ -1,0 +1,12 @@
+---
+-   name: pull latest docker image
+    command: docker pull nubelacorp/py-webkit2png-flask-api
+
+-   name: remove existing gom-backend docker instances
+    docker:
+        name: "py-webkit2png-flask-api"
+        image: nubelacorp/py-webkit2png-flask-api
+        state: absent
+
+-   name: run docker image
+    command: "docker run -d -p 8081:8080 --restart on-failure:5 --name py-webkit2png-flask-api -it nubelacorp/py-webkit2png-flask-api"

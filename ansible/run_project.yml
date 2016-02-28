@@ -1,0 +1,7 @@
+---
+-   name: Restarts py-webkit2png-flask-api
+    hosts: production
+    sudo: yes
+    gather_facts: False
+    roles:
+        - run_webkit2png
