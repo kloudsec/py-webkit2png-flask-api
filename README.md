@@ -18,7 +18,7 @@ This is a API project that takes in a URL and returns a screenshot (*png format*
 ## Fast deployment
 
   1. `docker pull nubelacorp/py-webkit2png-flask-api`
-  2. `docker run -p 8080:80 -it nubelacorp/py-webkit2png-flask-api`
+  2. `docker run -p 80:8080 -it nubelacorp/py-webkit2png-flask-api`
 
 
 ## Usage
