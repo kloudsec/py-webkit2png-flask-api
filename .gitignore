@@ -1,0 +1,6 @@
+*.pyc
+v_env*
+resources*
+.DS_Store
+.idea*
+resources*
