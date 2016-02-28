@@ -23,4 +23,4 @@ WORKDIR /workspace/py-webkit2png-flask-api
 RUN pip install -r requirements.txt
 RUN ./manage init
 
-CMD /workspace/py-webkit2png-flask-api/manage run
+CMD /workspace/py-webkit2png-flask-api/manage run_standalone
