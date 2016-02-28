@@ -7,7 +7,7 @@ from flask.helpers import send_file
 from selenium import webdriver
 from api.app import app
 from cfg import RESOURCES_FOLDER_PATH, DEFAULT_IMAGE_PLACEHOLDER, SMART_LOAD_LOAD_SECS
-from flask import request
+from flask import request, jsonify
 import os
 from slugify import slugify
 
@@ -81,6 +81,13 @@ def get_screenshot():
 
     return send_file(cache_filepath, mimetype='image/png')
 
+
+def ping():
+    return jsonify({'status': 'ok'})
+
+
+app.add_url_rule('/ping',
+                 "ping", ping, methods=['GET'])
 
 app.add_url_rule('/',
                  "index", get_screenshot, methods=['GET'])
