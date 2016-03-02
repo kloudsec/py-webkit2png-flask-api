@@ -65,7 +65,8 @@ def get_screenshot():
         else:
             time.sleep(timeout)
             driver.get_screenshot_as_file(file_path)
-            driver.quit()
+    finally:
+        driver.quit()
 
     if is_0byte(file_path):
         return send_file(DEFAULT_IMAGE_PLACEHOLDER, mimetype='image/png')
