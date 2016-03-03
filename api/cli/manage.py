@@ -41,7 +41,7 @@ def run_standalone():
     d = wsgiserver.WSGIPathInfoDispatcher({'/': app})
     host = '0.0.0.0'
     port = 8080
-    server = wsgiserver.CherryPyWSGIServer((host, port), d, numthreads=3, timeout=10, request_queue_size=30)
+    server = wsgiserver.CherryPyWSGIServer((host, port), d, numthreads=10, timeout=30, request_queue_size=100)
 
     if __name__ == '__main__':
         try:
