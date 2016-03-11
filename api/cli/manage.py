@@ -37,19 +37,9 @@ def run_docker():
 
 @manager.command
 def run_standalone():
-    from api.web import app
-    d = wsgiserver.WSGIPathInfoDispatcher({'/': app})
-    host = '0.0.0.0'
-    port = 8080
-    server = wsgiserver.CherryPyWSGIServer((host, port), d, numthreads=10, timeout=30, request_queue_size=100)
-
-    if __name__ == '__main__':
-        try:
-            print "Server started on http://%s:%d" % (host, port)
-            server.start()
-        except KeyboardInterrupt:
-            server.stop()
-
+    util.run_cmd_lis([
+        'gunicorn -c resources/gunicorn-conf.py backend_wsgi',
+    ])
 
 if __name__ == '__main__':
     manager.main()
