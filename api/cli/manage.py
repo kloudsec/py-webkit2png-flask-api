@@ -38,7 +38,7 @@ def run_docker():
 @manager.command
 def run_standalone():
     util.run_cmd_lis([
-        'gunicorn -c gunicorn-conf.py backend_wsgi',
+        'gunicorn -c gunicorn-conf.py wsgi',
     ])
 
 if __name__ == '__main__':
