@@ -2,6 +2,9 @@
 -   name: pull latest docker image
     command: docker pull nubelacorp/py-webkit2png-flask-api
 
+-   name: install docker-py as a workaround for Ansible issue
+    pip: name=docker-py version=1.2.3
+
 -   name: remove existing gom-backend docker instances
     docker:
         name: "py-webkit2png-flask-api"
